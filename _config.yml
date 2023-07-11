@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://cold-summer.github.io
+url: https://cold-summer.github.io/zzkBlog
 date_format: "ordinal"
 title: 码志
 subtitle: "公众号：闷骚的程序员"
