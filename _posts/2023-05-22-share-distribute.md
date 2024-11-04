@@ -77,7 +77,7 @@ ps： 一致性指强一致性。矛盾主要在一致性和分区容错性
 
 **要么所有参与进程都提交事务，要么都取消事务，即实现ACID中的原子性(A)的常用手段**
 
-![image-20230315003637513](http://image.comid.top/image/202307161348084.png)
+![image-20230315003637513](http://images.comid.top/image/202307161348084.png)
 
 | 步骤 | 描述                             |
 | ---- | -------------------------------- |
@@ -106,7 +106,7 @@ ps： 一致性指强一致性。矛盾主要在一致性和分区容错性
 
 是 2PC 的改进版，将 2PC 的 “提交事务请求” 过程一分为二，共 形成了由CanCommit、PreCommit和doCommit三个阶段组成的事务处理协议。
 
-![image-20230315010212394](https://s1.vika.cn/space/2023/03/15/c0476c5c663944a7b488a40a03a1814b)
+![image-20230315010212394](http://images.comid.top/image/202411041914051.png)
 
 相对于二阶段的升级点：
 
@@ -169,7 +169,7 @@ NWR值的不同组合会产生不同的一致性效果
 
 分布式系统中，通常工业界通常把N设置为3。
 
-![image-20230315011421515](https://s1.vika.cn/space/2023/03/15/7c00fe7a723240969ec8bce11c677843)
+![image-20230315011421515](http://images.comid.top/image/202411041914651.png)
 
 可以保证一定能够读取到最新版本的更新数据
 
@@ -177,7 +177,7 @@ NWR值的不同组合会产生不同的一致性效果
 
 #### 二、R+W<=N，无法保证数据的强一致性
 
-![image-20230315011610206](https://s1.vika.cn/space/2023/03/15/2383d3278c794ed281c519452d00d7c5)
+![image-20230315011610206](http://images.comid.top/image/202411041914533.png)
 
 
 
@@ -296,11 +296,11 @@ Paxos算法是基于**消息传递**且具有**高度容错特性**的**一致�
 
 一、引入多个协调者
 
-![](https://s1.vika.cn/space/2023/03/15/3b8481b97c044c74b1a955fac70c9b10)
+![](http://images.comid.top/image/202411041914862.png)
 
 二、引入主协调者,以他的命令为基准
 
-![image-20230315012808131](https://s1.vika.cn/space/2023/03/15/a50c0c543f5f46029d424f262e5dfa26)
+![image-20230315012808131](http://images.comid.top/image/202411041914359.png)
 
 
 
@@ -310,7 +310,7 @@ Paxos的版本有: Basic Paxos , Multi Paxos, Fast-Paxos
 
 **具体落地有Raft 和zk的ZAB协议**。
 
-![image-20230315012924978](https://s1.vika.cn/space/2023/03/15/f64ee59a00bf4af9bb57cabd2b5c13e2)
+![image-20230315012924978](http://images.comid.top/image/202411041914561.png)
 
 
 
@@ -327,7 +327,7 @@ Paxos的版本有: Basic Paxos , Multi Paxos, Fast-Paxos
     - Learner: 最终决策的学习者
         - 学习者充当该协议的复制因素(不参与投票)
 
-![image-20230315090734396](https://s1.vika.cn/space/2023/03/15/9c72a0a5948c40ea8c871532a95ea700)
+![image-20230315090734396](http://images.comid.top/image/202411041914274.png)
 
 
 
@@ -355,13 +355,13 @@ Paxos的版本有: Basic Paxos , Multi Paxos, Fast-Paxos
 
 1. 正常流程，无故障的basic Paxos
 
-   ![image-20230315090927262](https://s1.vika.cn/space/2023/03/15/5bc151f2aefa4f89994e2d7771ad3728)
+   ![image-20230315090927262](http://images.comid.top/image/202411041915952.png)
 
 2. Acceptor失败时的basic Paxos
 
    在下图中，多数派中的一个Acceptor发生故障，因此多数派大小变为2。在这种情况下，Basic Paxos协议仍然成功。
 
-   ![image-20230315091007523](https://s1.vika.cn/space/2023/03/15/6e7607e4759740c383a8351fa80d015f)
+   ![image-20230315091007523](http://images.comid.top/image/202411041915651.png)
 
 3. Proposer失败时的basic Paxos
 
@@ -369,14 +369,14 @@ Paxos的版本有: Basic Paxos , Multi Paxos, Fast-Paxos
 
    传递到Acceptor的时候失败了,这个时候需要选出新的Proposer(提案人),那么 Basic Paxos协议仍然成功
 
-   ![image-20230315091128616](https://s1.vika.cn/space/2023/03/15/922fb4334605433d988b92f9632c30ef)
+   ![image-20230315091128616](http://images.comid.top/image/202411041915223.png)
 
 4. 当多个提议者发生冲突时的basic Paxos
 
    最复杂的情况是多个Proposer都进行提案,导致Paxos的**活锁问题**.
 
 
-![image-20230315091304538](https://s1.vika.cn/space/2023/03/15/87f897b280a3431689fb5c05ec06d4ea)
+![image-20230315091304538](http://images.comid.top/image/202411041915784.png)
 
 
 
@@ -400,11 +400,11 @@ basic paxos缺点：
 
 **一、选举leader**
 
-![image-20230315091711523](https://s1.vika.cn/space/2023/03/15/7dab08b8f43f4346b1d6b93c101ae9fb)
+![image-20230315091711523](http://images.comid.top/image/202411041915188.png)
 
 二、leader决定
 
-![image-20230315091804429](https://s1.vika.cn/space/2023/03/15/67288f193e0b4526b722bcdcfd00c5b9)
+![image-20230315091804429](http://images.comid.top/image/202411041915542.png)
 
 
 
@@ -414,7 +414,7 @@ basic paxos缺点：
 
 因此， 最后只有“客户端”和“服务器”。
 
-![image-20230315091934295](https://s1.vika.cn/space/2023/03/15/b9cf603277e540a0ad7659dce23653df)
+![image-20230315091934295](http://images.comid.top/image/202411041915172.png)
 
 
 
@@ -454,7 +454,7 @@ Leader 会周期性的发送心跳包给 Follower。每个 Follower 都设置了
 
 基本流程：
 
-![image-20230316100714117](https://s1.vika.cn/space/2023/03/16/dcff812836ed426b98c6ebfffe77687c)
+![image-20230316100714117](http://images.comid.top/image/202411041915636.png)
 
 
 
