@@ -686,3 +686,21 @@ $ git remote prune origin
 ```
 
 清除完成。
+
+### 删除已经合并的本地分支
+
+```sh
+git branch --merged | ggrep -E -v "(^\*|master|main|dev|develop|support/fat)" | xargs git branch -d
+```
+
+### 为 github 设置 SSH 代理
+
+~/.ssh/config 文件：
+
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+    ProxyCommand nc -X 5 -v -x 127.0.0.1:54106 %h %p
+```

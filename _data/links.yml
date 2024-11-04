@@ -81,3 +81,11 @@
 - name: river's blog
   url: https://www.river106.cn
   src: www
+
+- name: lanruixiang
+  url: https://lanruixiang.github.io/
+  src: www
+
+- name: lch2010
+  url: https://lch2010.github.io/
+  src: www
