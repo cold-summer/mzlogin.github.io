@@ -18,6 +18,7 @@ permalink: /open-source/
         <!-- Check here for github metadata -->
         <!-- https://help.github.com/articles/repository-metadata-on-github-pages/ -->
         {% for repo in sorted_repos %}
+        {% if repo.name != 'GLaDOS-checkin' %}
         <a href="{{ repo.html_url }}" target="_blank" class="one-third-column card text-center">
             <div class="thumbnail">
                 <div class="card-image geopattern" data-pattern-id="{{ repo.name }}">
@@ -46,6 +47,7 @@ permalink: /open-source/
                 </div>
             </div>
         </a>
+        {% endif %}
         {% endfor %}
     </div>
 </section>
