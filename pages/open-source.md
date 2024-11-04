@@ -7,7 +7,7 @@ permalink: /open-source/
 ---
 
 {% if site.github.public_repositories != false %}
-{% assign sorted_repos = site.github.public_repositories | sort: 'stargazers_count' | reverse %}
+{% assign sorted_repos = site.github.public_repositories | sort: 'stargazers_count' | limit: 5 | reverse %}
 
 <section class="container">
     <header class="text-center">
